@@ -309,7 +309,12 @@
       </div>
     </header>
     <!-- end header section -->
-
+ 
+    <div id="alertmsg" class="alertmsg" onclick="toggleAlertmsg()" style="display: none; background-color: rgb(8, 192, 8); width:255px;height:auto; position:fixed; top: 14%; padding-left: 2%;padding-right: 1%; border-radius: 18px;right:0;z-index:9999;opacity: 0.98;color: #fff;word-wrap: break-word;">
+      <p id="status" style="font-weight:900; font-size: x-large; font-family: 'Times New Roman', Times, serif;margin-top: 10px;">Success</p>
+      <p id="statusmsg" style="margin-top: -12px;">Login Successfull</p>
+    </div>
+  
     <!--Login and Sign Up-->
     <div id="ade" class="login-form"
       style="display: none; border-radius: 20px; box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); position: fixed; top: -2%; left: 70%; transform: translateX(-50%); z-index: 9999;">
@@ -331,14 +336,14 @@
           <span class="icon"><i class="bi bi-lock-fill"></i></span>
           <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
         </div>
-        <a href="#" id="forgotPasswordLink" style="margin-left: 20%;text-decoration: none;">Forgot Password??</a>
+        <a href="#" id="forgotPasswordLink" style="margin-left: 20%;text-decoration: none;" onclick="toggleAlertmsg('Success','Please check the registered email for change password.')" >Forgot Password??</a>
         <div class="signup-link">
           Don't have an account!? <a href="#" id="toggleSignUp">Sign up</a>
         </div><br>
         <button type="submit" class="btn btn-primary" style="border-radius: 30px;">Login</button>
       </form>
       <!-- Sign-up form -->
-      <form id="signupForm" action="signup.php" method="POST"
+      <form id="signupForm" 
         style="display: none; margin-top: 5%; border-radius: 20px;box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);">
         <h2 style="font-size: x-large; padding: 0;">Sign-up</h2>
         <div class="form-group">
@@ -700,14 +705,7 @@
       loginForm.style.display = 'none';
       signupForm.style.display = 'block';
     });
-    function unvisble_Login() {
-      document.getElementById('ade').style.display = 'none';
-      visibleECart();
-    }
-    function visible_login() {
-      document.getElementById('ade').style.display = 'block';
-      unvisibleECart();
-    }
+
   </script>
 
   <!--Script for the Toggle the ecart-->

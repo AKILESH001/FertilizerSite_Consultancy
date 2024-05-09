@@ -130,15 +130,14 @@ loginForm.addEventListener('submit', (event) => {
         .then(data => {
             if (data.status) {
                 if (data.isUser) {
-                    alert("Login Success");
+                    toggleAlertmsg("Success","Login Successful");
                     unvisble_Login();
                     fetchOrders();
                 } else {
-                    alert("Redirect");
                     window.location.href = "/admin";
                 }
             } else {
-                alert("TryAgain");
+                toggleAlertmsg("Failed","Login Failed");
             }
         });
 });

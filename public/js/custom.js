@@ -29,9 +29,9 @@ $(window).on('load', function () {
 });
 
 // nice select
-$(document).ready(function() {
+$(document).ready(function () {
     $('select').niceSelect();
-  });
+});
 
 /** google_map js **/
 function myMap() {
@@ -67,3 +67,32 @@ $(".client_owl-carousel").owlCarousel({
         }
     }
 });
+
+function toggleAlertmsg(status, msg) {
+    const alertmsg = document.getElementById("alertmsg");
+    document.getElementById("status").textContent = status;
+    document.getElementById("statusmsg").textContent = msg;
+    if (status === "Failed") {
+        alertmsg.style.backgroundColor = "#FF0A00";
+    } else if (status === "Success") {
+        alertmsg.style.backgroundColor = "#00AF3A";
+    } else {
+        alertmsg.style.backgroundColor = "#F97A00";
+    }
+    if (alertmsg.style.display === "block") {
+        alertmsg.style.display = "none";
+    } else {
+        alertmsg.style.display = "block";
+        setTimeout(function () {
+            toggleAlertmsg();
+        }, 5000);
+
+    }
+}
+function unvisble_Login() {
+    document.getElementById('ade').style.display = 'none';
+  }
+  function visible_login() {
+    document.getElementById('ade').style.display = 'block';
+    unvisibleECart();
+  }

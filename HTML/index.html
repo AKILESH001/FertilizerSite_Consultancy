@@ -140,7 +140,7 @@
         <span class="icon"><i class="bi bi-lock-fill"></i></span>
         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
     </div>
-          <a href="#" id="forgotPasswordLink" style="margin-left: 20%;text-decoration: none;">Forgot Password??</a>
+          <a href="#" id="forgotPasswordLink" style="margin-left: 20%;text-decoration: none;" onclick="toggleAlertmsg('Success','Please check the registered email for change password.')" >Forgot Password??</a>
           <div class="signup-link">
               Don't have an account!? <a href="#" id="toggleSignUp">Sign up</a> 
           </div><br>
@@ -193,8 +193,10 @@
     </form>
   </div>
 
-
-
+  <div id="alertmsg" class="alertmsg" onclick="toggleAlertmsg()" style="display: none; background-color: rgb(8, 192, 8); width:255px;height:auto; position:fixed; top: 14%; padding-left: 2%;padding-right: 1%; border-radius: 18px;right:0;z-index:9999;opacity: 0.98;color: #fff;word-wrap: break-word;">
+    <p id="status" style="font-weight:900; font-size: x-large; font-family: 'Times New Roman', Times, serif;margin-top: 10px;">Success</p>
+    <p id="statusmsg" style="margin-top: -12px;">Login Successfull</p>
+  </div>
 
     <!-- slider section -->
     <section class="slider_section ">
